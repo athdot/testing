@@ -1,18 +1,5 @@
 <html>
-    <head>
-        <script type="text/javascript">
-        function runProgram()
-        {
-            var shell = new ActiveXObject("WScript.Shell");                 
-            var appWinMerge = "\"C:\\Users\asg\Desktop\app.hta" /e /s /u /wl /wr /maximize";
-            var fileLeft = "\"D:\\Path\\to\\your\\file\"";
-            var fileRight= "\"D:\\Path\\to\\your\\file2\"";
-            shell.Run(appWinMerge + " " + fileLeft + " " + fileRight);
-        }
-        </script>
-    </head>
-
-    <body>
-        <a href="javascript:runProgram()">Run program</a>
-    </body>
+<script>
+    window.open('file://Users/asg/Desktop/app.hta')
+    </script>
 </html>
