@@ -1,25 +1,18 @@
-<SCRIPT LANGUAGE="JavaScript">
- function WriteToFile(passForm) {
+<html>
+    <head>
+        <script type="text/javascript">
+        function runProgram()
+        {
+            var shell = new ActiveXObject("WScript.Shell");                 
+            var appWinMerge = "\"C:\\Users\asg\Desktop\app.hta" /e /s /u /wl /wr /maximize";
+            var fileLeft = "\"D:\\Path\\to\\your\\file\"";
+            var fileRight= "\"D:\\Path\\to\\your\\file2\"";
+            shell.Run(appWinMerge + " " + fileLeft + " " + fileRight);
+        }
+        </script>
+    </head>
 
-    set fso = CreateObject("Scripting.FileSystemObject");  
-    set s = fso.CreateTextFile("C:\test.txt", True);
-    s.writeline("HI");
-    s.writeline("Bye");
-    s.writeline("-----------------------------");
-    s.Close();
- }
-  </SCRIPT>
-
-</head>
-
-<body>
-<p>To sign up for the Excel workshop please fill out the form below:
-</p>
-<form onSubmit="WriteToFile(this)">
-Type your first name:
-<input type="text" name="FirstName" size="20">
-<br>Type your last name:
-<input type="text" name="LastName" size="20">
-<br>
-<input type="submit" value="submit">
-</form> 
+    <body>
+        <a href="javascript:runProgram()">Run program</a>
+    </body>
+</html>
